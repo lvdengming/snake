@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>贪吃蛇</title>
+	</head>
+	<body>
+		<!-- 整个游戏界面区域 -->
+		<div id="app">
+			<!-- 蛇活动区域 -->
+			<div id="stage">
+				<!-- 蛇 -->
+				<div id="snake">
+					<div></div>
+				</div>
+				<!-- 食物 -->
+				<div id="food">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- 贪吃蛇得分统计区 -->
+			<div id="score-panel">
+				<span id="score">SCORE: 0</span>
+				<span id="level">LEVEL: 1</span>
+			</div>
+			<!-- 信息提示栏 -->
+			<div id="info-panel">
+				<!-- 显示游戏状态 -->
+				<div id="state"><span>Running...</span></div>
+				<!-- 显示操作说明 -->
+				<div id="operation">
+					<span>上：↑ / W</span>
+					<span>下：↓ / S</span>
+					<span>左：← / A</span>
+					<span>右：→ / D</span>
+				</div>
+				<!-- 显示控制说明 -->
+				<div id="control">
+					<span>暂停：P</span>
+					<span>恢复：U</span>
+					<span>重置：R</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

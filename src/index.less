@@ -1,0 +1,132 @@
+// 初始化页面样式
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@bgColor: rgb(255, 250, 232); // 网页背景颜色
+@pageBgColor: #b7d4a8; // 游戏界面背景颜色
+@pageBorderColor: #000; // 游戏界面边框颜色
+@panelColor: rgb(224, 237, 211); // 信息提示栏颜色
+
+body {
+	background-color: @bgColor;
+}
+
+
+
+.gap-border(@borderColor: #b7d4a8) { // 透明边框
+	border: 1px solid @borderColor;
+	box-sizing: border-box;
+}
+
+// 游戏页面样式
+#app {
+	position: relative;
+	width: 360px;
+	height: 420px;
+	padding: 10px;
+	background-color: @pageBgColor;
+	margin: 100px auto;
+	border: 18px solid @pageBorderColor;
+	box-sizing: border-box;
+	border-radius: 25px;
+
+	// 蛇活动区域
+	#stage {
+		position: relative;
+		width: 304px;
+		height: 304px;
+		border: 2px solid @pageBorderColor;
+		box-sizing: border-box;
+		
+		// 蛇
+		#snake {
+			// 每节身体
+			&>div {
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				background-color: @pageBorderColor;
+				.gap-border();
+			}
+		}
+		
+		// 食物
+		#food {
+			display: flex;
+			justify-content: space-around;
+			flex-flow: row wrap; // flex 布局，超过一行自动换行
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			
+			// 食物的组成部分
+			&>div {
+				width: 6px;
+				height: 6px;
+				background-color: @pageBorderColor;
+				.gap-border(transparent);
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	// 得分统计区
+	#score-panel {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		font-family: 'courier new';
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	// 信息提示栏
+	#info-panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 165px;
+		height: 100%;
+		text-align: left;
+		transform: translate(120%, 0);
+		
+		// 游戏状态
+		#state {
+			padding: 10px 20px;
+			background-color: @panelColor;
+			font-size: 20px;
+			font-weight: bold;
+			color: rgb(82, 196, 26);
+			border-radius: 8px;
+		}
+		
+		// 操作说明
+		#operation {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 20px;
+			background-color: @panelColor;
+			border-radius: 8px;
+			font-size: 18px;
+			color: rgb(64, 169, 255);
+			line-height: 30px;
+		}
+		
+		// 控制说明
+		#control {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 20px;
+			background-color: @panelColor;
+			border-radius: 8px;
+			font-size: 18px;
+			color: rgb(64, 169, 255);
+			line-height: 30px;
+		}
+	}
+}
